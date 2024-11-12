@@ -19,7 +19,7 @@ module.exports = {
 				prompt,
 				null,
 				history,
-				process.env.GEMINI_API_KEY,
+				'AIzaSyCHe25egkb18PYHKwjGCPdJmplb9Hvwp4Q',
 			); // Assuming you set GEMINI_API_KEY as an environment variable
 
 			// Update conversation history
