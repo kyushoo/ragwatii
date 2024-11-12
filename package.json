@@ -1,0 +1,33 @@
+{
+	"name": "XaoaiPageBot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@y2pheq/xaoai": "^x.x.x"
+	},
+	"dependencies": {
+		"@types/node": "^x.x.x",
+		"axios": "^x.x.x",
+		"body-parser": "^x.x.x",
+		"express": "^x.x.x",
+		"node-fetch": "^x.x.x",
+		"request": "^x.x.x",
+		"winston": "^x.x.x",
+		"moment-timezone": "^x.x.x",
+		"moment": "^x.x.x",
+		"path": "^x.x.x",
+		"promises": "^x.x.x",
+		"form-data": "^x.x.x",
+		"fs": "^x.x.x"
+	},
+	"engines": {
+		"node": "20.x"
+	}
+}
