@@ -96,7 +96,7 @@ module.exports = {
 			sendMessage(
 				senderId,
 				{
-					text: result,
+					text: fontChanger(result),
 				},
 				pageAccessToken,
 			);
