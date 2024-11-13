@@ -55,9 +55,6 @@ async function handleMessage(event, pageAccessToken) {
     };
     saveUserData(userData);
     console.log(`New user registered: ${senderId}`);
-    sendMessage(senderId, {
-      text: 'PING! BOT IS NOW RESUMED.'
-    }, pageAccessToken);
   }
 
   const args = messageText.split(' ');

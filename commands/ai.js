@@ -109,7 +109,7 @@ module.exports = {
 			sendMessage(
 				senderId,
 				{
-					text: 'Failed to fetch data: API Error.',
+					text: error.message
 				},
 				pageAccessToken,
 			);

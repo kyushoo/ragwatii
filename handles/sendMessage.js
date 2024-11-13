@@ -89,7 +89,7 @@ async function sendMessage(senderId, message, pageAccessToken) {
 			const res = await axios.post(url, formData, {
 				headers: formData.getHeaders(),
 			});
-			console.log('Message sent successfully.', res);
+			// console.log('Message sent successfully.', res);
 			return; // Exit after successful file upload
 		}
 
@@ -103,7 +103,7 @@ async function sendMessage(senderId, message, pageAccessToken) {
 				};
 				await axios.post(url, chunkPayload);
 			}
-			console.log('Message sent successfully:', chunkPayload);
+			// console.log('Message sent successfully:', chunk);
 			return;
 		}
 
@@ -114,7 +114,7 @@ async function sendMessage(senderId, message, pageAccessToken) {
 		});
 		console.log('Message sent successfully:', response);
 	} catch (error) {
-		console.error('Error sending message:', error);
+		console.error('Error sending message:', error.message);
 
 		if (error.response) {
 			// Check if there's a response from the API
