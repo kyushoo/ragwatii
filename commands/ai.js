@@ -64,6 +64,7 @@ const fontList = {
 
 function fontChanger(text) {
 	const changeFonts = /\*\*(.*?)\*\*/g;
+	const _changeFonts = /\*(.*?)\*/g;
 
 	function fontOutput(str) {
 		return str
@@ -72,7 +73,7 @@ function fontChanger(text) {
 			.join('');
 	}
 
-	return text.replace(changeFonts, (match, p1) => `${fontOutput(p1)}`);
+	return text.replace(changeFonts && _changeFonts, (match, p1) => `${fontOutput(p1)}`);
 }
 
 module.exports = {
