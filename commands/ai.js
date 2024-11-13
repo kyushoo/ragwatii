@@ -9,37 +9,12 @@ module.exports = {
 	async execute(senderId, args, pageAccessToken, sendMessage) {
 		const userInput = args.join(' ');
 		try {
-			// Primary and fallback URLs
-			const primaryUrl = `https://api.y2pheq.me/xaoaibeta?prompt=${encodeURIComponent(
+			const apiUrl = `https://api.y2pheq.me/xaoai?prompt=${encodeURIComponent(
 				userInput,
 			)}&uid=${senderId}`;
-			const fallbackUrl = `https://api.y2pheq.me/xaoai?prompt=${encodeURIComponent(
-				userInput,
-			)}&uid=${senderId}`;
-
-			let response;
-			try {
-				response = await axios.get(primaryUrl);
-			} catch (primaryError) {
-				try {
-					response = await axios.get(fallbackUrl);
-				} catch (fallbackError) {
-					console.error(
-						`Error fetching from both APIs:`,
-						primaryError,
-						fallbackError,
-					);
-					sendMessage(
-						senderId,
-						{text: 'Failed to fetch data: API Error.'},
-						pageAccessToken,
-					);
-					return; // Stop execution to avoid sending another message below
-				}
-			}
 
 			let xaoaiResponse =
-				response.data.result || 'Failed to fetch data: API Error.';
+				apiUrl.data.result || 'Failed to fetch data: API Error.';
 			xaoaiResponse = xaoaiResponse.replace(/(\*\*|\*|```|_|~|>)/g, '');
 			sendMessage(
 				senderId,
